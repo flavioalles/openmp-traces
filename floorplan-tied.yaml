@@ -1,0 +1,18 @@
+containers:
+    - THREAD
+states:
+    - STATE
+keep:
+    - "!$omp create task @tied-floorplan.c:530 <3>"
+    - "!$omp task @tied-floorplan.c:530 <4>"
+discard:
+    - "!$omp taskwait @tied-floorplan.c:584 <8>"
+# ignored:
+    # "!$omp parallel @tied-floorplan.c:620 <9>"
+    # "!$omp single @tied-floorplan.c:622 <11>"
+    # "!$omp single sblock @tied-floorplan.c:622 <12>"
+    # "!$omp atomic @tied-floorplan.c:572 <7>"
+    # "!$omp critical @tied-floorplan.c:560 <5>"
+    # "!$omp critical sblock @tied-floorplan.c:560 <6>"
+    # "!$omp implicit barrier @tied-floorplan.c:628 <10>"
+    # "!$omp implicit barrier @tied-floorplan.c:626 <13>"

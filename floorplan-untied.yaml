@@ -1,0 +1,18 @@
+containers:
+    - THREAD
+states:
+    - STATE
+keep:
+    - "!$omp create task @floorplan.c:530 <3>"
+    - "!$omp task @floorplan.c:530 <4>"
+discard:
+    - "!$omp taskwait @floorplan.c:584 <8>"
+# ignored:
+    # "!$omp implicit barrier @floorplan.c:626 <13>"
+    # "!$omp implicit barrier @floorplan.c:628 <10>"
+    # "!$omp atomic @floorplan.c:572 <7>"
+    # "!$omp critical @floorplan.c:560 <5>"
+    # "!$omp critical sblock @floorplan.c:560 <6>"
+    # "!$omp parallel @floorplan.c:620 <9>"
+    # "!$omp single @floorplan.c:622 <11>"
+    # "!$omp single sblock @floorplan.c:622 <12>"
